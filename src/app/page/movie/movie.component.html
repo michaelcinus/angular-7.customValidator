@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 10vh; margin-bottom: 15vh;">
+    <div class="text-center mb-5">
+        <h1>MOVIES</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">Title</th>
+                          <th scope="col">Year</th>
+                          <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let m of movies">
+                        <td>{{ m.nome }}</td>
+                        <td>{{ m.anno }}</td>
+                        <td>{{ m.descrizione }}</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <form class="form m-2">
+                    <label for="">Title</label>
+                    <input id="title" name="title" class="form-control" type="text" #title>
+                
+                    <label for="">Year</label>
+                    <input class="form-control" name="author" id="author" type="text" #author>
+                
+                    <label for="">Description</label>
+                    <input type="number" class="form-control" name="year" id="year" #year>
+
+                    <label for="">ISAN</label>
+                    <input type="number" class="form-control" name="year" id="year" #year>
+                    <br>
+                    <button type="submit" class="btn btn-warning">Add Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
