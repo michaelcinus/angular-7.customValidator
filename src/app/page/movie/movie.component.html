@@ -25,21 +25,28 @@
         </div>
         <div class="col-lg-6">
             <div class="card">
-                <form class="form m-2">
-                    <label for="">Title</label>
-                    <input id="title" name="title" class="form-control" type="text" #title>
-                
-                    <label for="">Year</label>
-                    <input class="form-control" name="author" id="author" type="text" #author>
-                
-                    <label for="">Description</label>
-                    <input type="number" class="form-control" name="year" id="year" #year>
-
-                    <label for="">ISAN</label>
-                    <input type="number" class="form-control" name="year" id="year" #year>
-                    <br>
-                    <button type="submit" class="btn btn-warning">Add Book</button>
-                </form>
+                <form class="m-2" #movieForm="ngForm" (ngSubmit)="submit()">
+                    <div class="form-group">
+                      <label>Title</label>
+                      <input type="text" class="form-control" placeholder="Add Title" name="nome" id="nome" #nome [(ngModel)]="movieModel.nome">
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <input type="number" class="form-control" placeholder="Add Year" name="year" id="year" #year [(ngModel)]="movieModel.anno">
+                      </div>
+                    <div class="form-group">
+                      <label>Description</label>
+                      <input type="text" class="form-control" placeholder="Add Description" name="descrizione" id="descrizione" #nome [(ngModel)]="movieModel.descrizione">
+                    </div>
+                    <div class="form-group">
+                        <label>ISAN</label>
+                        <input type="text" class="form-control" placeholder="Add ISAN" name="isan" id="isan" #isan="ngModel" [(ngModel)]="movieModel.isan" isan-validator>
+                        <div class="alert alert-danger" *ngIf="!isan.valid && isan.dirty">
+                            Check field.
+                        </div>
+                      </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </form>
             </div>
         </div>
     </div>

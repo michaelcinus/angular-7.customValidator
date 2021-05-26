@@ -10,6 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MovieComponent implements OnInit {
 
   movies: Array<Movie> = [];
+  movieModel: Movie = {};
 
   constructor( private movieService: MovieService) { }
 
@@ -18,6 +19,11 @@ export class MovieComponent implements OnInit {
       res => this.movies = res,
       err => console.log(err)
     )
+  }
+
+  submit() {
+    console.log(this.movieModel);
+    
   }
 
 }

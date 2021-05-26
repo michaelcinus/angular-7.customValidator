@@ -4,4 +4,5 @@ export interface Movie {
     descrizione? : string;
     anno? : number;
     categories? : string;
+    isan? : string
 }

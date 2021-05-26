@@ -10,6 +10,8 @@ import { MovieComponent } from './page/movie/movie.component';
 import { BookComponent } from './page/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CodIsbnValidatorDirective } from './directives/cod-isbn-validator.directive';
+import { CodIsanValidatorDirective } from './directives/cod-isan-validator.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     MovieComponent,
-    BookComponent
+    BookComponent,
+    CodIsbnValidatorDirective,
+    CodIsanValidatorDirective
   ],
   imports: [
     BrowserModule,
