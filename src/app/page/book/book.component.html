@@ -25,20 +25,20 @@
         </div>
         <div class="col-lg-6">
             <div class="card">
-                <form class="form m-2">
+                <form class="form m-2" [formGroup]="bookForm" (ngSubmit)="submit()">
                     <label for="">Title</label>
-                    <input id="title" name="title" class="form-control" type="text" #title>
+                    <input id="title" name="title" class="form-control" type="text" #title formControlName="title">
                 
                     <label for="">Author</label>
-                    <input class="form-control" name="author" id="author" type="text" #author>
+                    <input class="form-control" name="author" id="author" type="text" #author formControlName="author">
                 
                     <label for="">Version</label>
-                    <input type="number" class="form-control" name="year" id="year" #year>
+                    <input type="number" class="form-control" name="version" id="year" #year formControlName="year">
 
-                    <label for="">ISPN</label>
-                    <input type="number" class="form-control" name="year" id="year" #year>
+                    <label for="">ISBN</label>
+                    <input type="number" class="form-control" name="isbn" id="isbn" #year formControlName="isbn">
                     <br>
-                    <button type="submit" class="btn btn-warning">Add Book</button>
+                    <button type="submit" class="btn btn-warning" [disabled]="!bookForm?.valid">Add Book</button>
                 </form>
             </div>
         </div>

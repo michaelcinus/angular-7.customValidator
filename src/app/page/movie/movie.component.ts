@@ -23,7 +23,6 @@ export class MovieComponent implements OnInit {
 
   submit() {
     console.log(this.movieModel);
-    
   }
 
 }
